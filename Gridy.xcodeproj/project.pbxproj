@@ -41,7 +41,7 @@
 		7D9D0C66257D4DA1004465E5 /* UIView+FadeInOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9D0C65257D4DA1004465E5 /* UIView+FadeInOut.swift */; };
 		7D9D0C6A257D587D004465E5 /* SAConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9D0C69257D587D004465E5 /* SAConfettiView.swift */; };
 		7D9D0C7A257E1FBA004465E5 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9D0C79257E1FBA004465E5 /* IntroViewController.swift */; };
-		7DAA0D3F258A001700AD86A1 /* UIButton + setSoundButtonInitialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA0D3E258A001700AD86A1 /* UIButton + setSoundButtonInitialState.swift */; };
+		7DAA0D3F258A001700AD86A1 /* UIButton+setSoundButtonInitialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAA0D3E258A001700AD86A1 /* UIButton+setSoundButtonInitialState.swift */; };
 		7DB7AB292588C80900F07076 /* SoundOnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7AB282588C80900F07076 /* SoundOnOffButton.swift */; };
 		7DEC270F257E41030042D7F5 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEC270E257E41030042D7F5 /* PhotosCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -83,7 +83,7 @@
 		7D9D0C65257D4DA1004465E5 /* UIView+FadeInOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+FadeInOut.swift"; path = "Gridy/Controller/UIView+FadeInOut.swift"; sourceTree = SOURCE_ROOT; };
 		7D9D0C69257D587D004465E5 /* SAConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAConfettiView.swift; sourceTree = "<group>"; };
 		7D9D0C79257E1FBA004465E5 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		7DAA0D3E258A001700AD86A1 /* UIButton + setSoundButtonInitialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + setSoundButtonInitialState.swift"; sourceTree = "<group>"; };
+		7DAA0D3E258A001700AD86A1 /* UIButton+setSoundButtonInitialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+setSoundButtonInitialState.swift"; sourceTree = "<group>"; };
 		7DB7AB282588C80900F07076 /* SoundOnOffButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundOnOffButton.swift; sourceTree = "<group>"; };
 		7DEC270E257E41030042D7F5 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotosCollectionViewCell.swift; path = Gridy/Controller/PhotosCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		C1A8229F270505D7CC2A4DAA /* Pods-Gridy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gridy.debug.xcconfig"; path = "Target Support Files/Pods-Gridy/Pods-Gridy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		1A64F9A925713C52009FFB5C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7DAA0D3E258A001700AD86A1 /* UIButton + setSoundButtonInitialState.swift */,
+				7DAA0D3E258A001700AD86A1 /* UIButton+setSoundButtonInitialState.swift */,
 				7D4C62FE2583A9FA0010ACF4 /* UIViewController+Alert.swift */,
 				7D9D0C65257D4DA1004465E5 /* UIView+FadeInOut.swift */,
 				1A3708EC25750FEF0082AD11 /* UIView+RemoveConstraints.swift */,
@@ -371,7 +371,7 @@
 				7D4C62A425814DE90010ACF4 /* ImageViewHelper.swift in Sources */,
 				7D9D0C48257BFDEF004465E5 /* Palette.swift in Sources */,
 				1A3708EA2574F82A0082AD11 /* GridyBrain.swift in Sources */,
-				7DAA0D3F258A001700AD86A1 /* UIButton + setSoundButtonInitialState.swift in Sources */,
+				7DAA0D3F258A001700AD86A1 /* UIButton+setSoundButtonInitialState.swift in Sources */,
 				7D4C62922580C39A0010ACF4 /* PhotosLoader.swift in Sources */,
 				1AB172B525755BFC00E14149 /* UIView+AddBorders.swift in Sources */,
 				7D4C62FF2583A9FA0010ACF4 /* UIViewController+Alert.swift in Sources */,

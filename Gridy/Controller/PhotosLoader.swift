@@ -10,31 +10,46 @@ import UIKit
 
 struct PhotosLoader {
     
-    var photos:[UIImage] = []
+    var photo: UIImage?
+    let fileManager = FileManager.default
+    let bundleURL = Bundle.main.bundleURL
+    var count:Int?
     
-    mutating func loadPhotos() -> [UIImage] {
-
-        let fileManager = FileManager.default
-        let bundleURL = Bundle.main.bundleURL
+    mutating func loadPhoto(item: Int) -> UIImage {
+        
         let assetURL = bundleURL.appendingPathComponent("PlayPhotos") // Bundle URL
         do {
           let contents = try fileManager.contentsOfDirectory(at: assetURL,
          includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey],
          options: .skipsHiddenFiles)
-          for item in contents { // item is the URL of everything in MyBundle imgs or otherwise.
-
-              let image = UIImage(contentsOfFile: item.path) // Initializing an image
-              photos.append(image!) // Adding the image to the icons array
-          }
+            
+         photo = UIImage(contentsOfFile: contents[item].path)
+            
         }
         catch let error as NSError {
           print(error)
         }
         
-        return photos
+        return photo!
+    }
     
+    mutating func photosCount() -> Int {
+        
+        let assetURL = bundleURL.appendingPathComponent("PlayPhotos") // Bundle URL
+        do {
+            let contents = try fileManager.contentsOfDirectory(at: assetURL,
+            includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey],
+                                                               options: .skipsHiddenFiles)
+            count = contents.count
+        }
+        catch let error as NSError {
+            print(error)
+        }
+        
+        return count!
     }
     
 }
+
 
 

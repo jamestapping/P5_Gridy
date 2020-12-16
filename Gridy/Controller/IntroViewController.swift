@@ -31,8 +31,6 @@ class IntroViewController: UIViewController{
         imagePickerController.allowsEditing = false
         
         soundButton.setSoundButtonInitialState()
-        
-        photos = photosLoader.loadPhotos()
     }
 
  
@@ -69,13 +67,13 @@ class IntroViewController: UIViewController{
 extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return photosLoader.photosCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotosCollectionViewCell
         
-        cell.photoImage.image = photos[indexPath.row]
+        cell.photoImage.image = photosLoader.loadPhoto(item: indexPath.row)
         cell.photoImage.layer.cornerRadius = 10
         
         return cell
