@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct PhotosLoader {
-    
+     
     var photo: UIImage?
     let fileManager = FileManager.default
     let bundleURL = Bundle.main.bundleURL
