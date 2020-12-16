@@ -12,5 +12,6 @@ struct imageTile {
     let tag:Int
     let image:UIImage
     var positionIsCorrect:Bool = false
+    var successSoundPlayed:Bool = false
 }
 

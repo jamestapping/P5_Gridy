@@ -10,11 +10,11 @@ import UIKit
 
 struct TileMaker {
     
-    func makeTiles(row : Int , column : Int) -> [UIImage] {
+    func makeTiles(image: UIImage, row : Int , column : Int) -> [UIImage] {
 
         var imageArr:[UIImage] = []
         
-        let userImage = #imageLiteral(resourceName: "IMG_8267")
+        let userImage = image
         
         let oImg = userImage
 

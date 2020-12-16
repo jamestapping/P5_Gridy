@@ -12,6 +12,7 @@ protocol GridyBrainDelegate {
     
     func didFinishGame()
     func tileAndEmptyViewDidIntersect(tile: UIView, view: UIView)
+    func tileInCorrectPosition()
 }
 
 struct GridyBrain {
@@ -22,11 +23,19 @@ struct GridyBrain {
     var topCellIsEmpty:[Bool] = []
     var imageTiles:[imageTile] = []
     var delegate: GridyBrainDelegate?
+    var splitImages:[UIImage] = []
     
     
-    mutating func setup() {
+    mutating func setup(imageToTile: UIImage) {
         
-        let splitImages = tileMaker.makeTiles(row: 4, column: 4)
+        // reset the cell state and the split images for play again
+        
+        bottomCellIsEmpty = []
+        topCellIsEmpty = []
+        splitImages = []
+        imageTiles = []
+        
+        splitImages = tileMaker.makeTiles(image: imageToTile, row: 4, column: 4)
         
         // Tag the images
         
@@ -35,10 +44,6 @@ struct GridyBrain {
             imageTiles.append(imageTile(tag: i, image: splitImages[i]))
             
         }
-        
-        //Shuffle the Image Tiles
-        
-        imageTiles.shuffle()
         
         // Setup the cell state
         
@@ -51,7 +56,7 @@ struct GridyBrain {
     
     mutating func updateBrain(viewCollection: [UIView], imageCollection: [UIImageView], backViews: [UIView], touchedImage: UIView) {
         
-        // Find the closest view to the tile
+        // Find the closest empty view to the tile
         
         let vcMap = viewCollection.compactMap {$0} + backViews.compactMap{$0}
         let distances = vcMap.map { $0.frame.origin.distance(to: touchedImage.frame.origin)}
@@ -83,14 +88,12 @@ struct GridyBrain {
         
         for (backViewIndex,backView) in backViews.enumerated() {
 
-            for (i,image) in imageCollection.enumerated() {
+            for image in imageCollection {
 
                 if image.frame == backView.frame {
 
                     topCellIsEmpty[backViewIndex] = false
-                    print ("Top Cell \(backViewIndex) is not empty, \(imageTiles[i].tag) inside")
-
-
+            
                 }
             }
         }
@@ -107,6 +110,7 @@ struct GridyBrain {
                 if image.frame != view.frame {
                     
                     imageTiles[imageIndex].positionIsCorrect = false
+                    // imageTiles[imageIndex].successSoundPlayed = false
                     bottomCellIsEmpty[viewIndex] = true
                     
                 }
@@ -129,7 +133,6 @@ struct GridyBrain {
         
         // Loops through all views and images to check for collisions and update positionIsCorrect
         
-        
         for view in viewCollection {
             
             for (imageIndex, image) in imageCollection.enumerated() {
@@ -139,6 +142,12 @@ struct GridyBrain {
                     if view.tag == imageTiles[imageIndex].tag {
                         
                         imageTiles[imageIndex].positionIsCorrect = true
+                        
+                        if !imageTiles[imageIndex].successSoundPlayed {
+                            delegate?.tileInCorrectPosition()
+                            imageTiles[imageIndex].successSoundPlayed = true
+                            
+                        }
                     }
                 }
             }
