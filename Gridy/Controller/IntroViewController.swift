@@ -73,6 +73,13 @@ extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! PhotosCollectionViewCell
         
+        DispatchQueue.main.async { [self] in
+            
+            cell.photoImage.image = self.photosLoader.loadPhoto(item: indexPath.row)
+            cell.photoImage.layer.cornerRadius = 10
+            
+        }
+        
         cell.photoImage.image = photosLoader.loadPhoto(item: indexPath.row)
         cell.photoImage.layer.cornerRadius = 10
         

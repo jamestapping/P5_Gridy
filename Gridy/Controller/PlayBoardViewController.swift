@@ -97,7 +97,7 @@ class PlayBoardViewController: UIViewController {
         
         visualShuffle()
         
-        // Save the tile origins for replay option
+        // Save the tile origins for replay option.
         
         for image in imageCollection {
             tileOrigin.append(image.frame)
