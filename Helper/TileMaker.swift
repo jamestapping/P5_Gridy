@@ -1,6 +1,6 @@
 //
 //  TileMaker.swift
-//  Gridy
+//  Puzly
 //
 //  Created by James on 27/11/2020.
 //

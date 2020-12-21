@@ -323,7 +323,7 @@ extension SwiftMessagesSegue {
                 return
             }
             if #available(iOS 12, *) {}
-            else  {
+                else {
                 // This works around a bug in iOS 11 where the safe area of `messageView` (
                 // and all ancestor views) is not set except on iPhone X. By assigning `messageView`
                 // to a view controller, its safe area is set consistently. This bug has been resolved as

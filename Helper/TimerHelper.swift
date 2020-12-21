@@ -1,6 +1,6 @@
 //
 //  TimerHelper.swift
-//  Gridy
+//  Puzly
 //
 //  Created by James Tapping on 14/12/2020.
 //

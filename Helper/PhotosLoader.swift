@@ -1,6 +1,6 @@
 //
 //  PhotosLoader.swift
-//  Gridy
+//  Puzly
 //
 //  Created by James Tapping on 09/12/2020.
 //

@@ -1,6 +1,6 @@
 //
 //  SoundHelper.swift
-//  Gridy
+//  Puzly
 //
 //  Created by James Tapping on 10/12/2020.
 //
